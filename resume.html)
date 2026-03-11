@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人履歷</title>
+
+<style>
+body{
+    font-family: "Microsoft JhengHei", sans-serif;
+    margin:0;
+    background:#f4f6f9;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+header{
+    text-align:center;
+    border-bottom:2px solid #eee;
+    padding-bottom:20px;
+}
+
+header h1{
+    margin:0;
+    color:#333;
+}
+
+header p{
+    color:#666;
+}
+
+section{
+    margin-top:25px;
+}
+
+section h2{
+    border-left:5px solid #4CAF50;
+    padding-left:10px;
+    color:#333;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:10px;
+}
+
+.skill{
+    background:#e9f5ec;
+    padding:8px;
+    margin:5px 0;
+    border-radius:5px;
+}
+
+button{
+    margin-top:20px;
+    padding:10px 20px;
+    border:none;
+    background:#4CAF50;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#43a047;
+}
+
+footer{
+    text-align:center;
+    margin-top:30px;
+    color:#888;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+<h1 id="name">你的名字</h1>
+<p>亞洲大學 AI系學生</p>
+</header>
+
+<section>
+<h2>基本資料</h2>
+<div class="info-grid">
+<div>學校</div>
+<div>亞洲大學</div>
+
+<div>學號</div>
+<div>114022092</div>
+
+<div>科系</div>
+<div>人工智慧學系</div>
+
+<div>Email</div>
+<div id="email">example@email.com</div>
+</div>
+</section>
+
+<section>
+<h2>技能</h2>
+
+<div class="skill">Python</div>
+<div class="skill">HTML / CSS / JavaScript</div>
+<div class="skill">AI / Machine Learning 基礎</div>
+<div class="skill">資料分析</div>
+
+</section>
+
+<section>
+<h2>學習經歷</h2>
+
+<p>
+目前就讀於亞洲大學人工智慧學系，對 AI 技術、程式設計與資料分析有興趣，
+持續學習 Python、網頁開發以及機器學習相關技術。
+</p>
+
+</section>
+
+<section>
+<h2>作品 / 專案</h2>
+
+<ul>
+<li>AI 小專案（機器學習練習）</li>
+<li>個人網站</li>
+<li>資料分析練習</li>
+</ul>
+
+</section>
+
+<button onclick="changeTheme()">切換顏色主題</button>
+
+<footer>
+<p>© 2026 個人履歷</p>
+</footer>
+
+</div>
+
+<script>
+
+function changeTheme(){
+
+let body = document.body
+
+if(body.style.background === "rgb(34, 34, 34)"){
+
+body.style.background="#f4f6f9"
+document.querySelector(".container").style.background="white"
+document.body.style.color="black"
+
+}else{
+
+body.style.background="#222"
+document.querySelector(".container").style.background="#333"
+document.body.style.color="white"
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
