@@ -6,8 +6,9 @@
 <title>個人履歷</title>
 
 <style>
+
 body{
-    font-family: "Microsoft JhengHei", sans-serif;
+    font-family:"Microsoft JhengHei",sans-serif;
     margin:0;
     background:#f4f6f9;
 }
@@ -16,45 +17,60 @@ body{
     max-width:900px;
     margin:auto;
     background:white;
-    padding:30px;
+    padding:40px;
     box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
 header{
-    text-align:center;
+    display:flex;
+    align-items:center;
+    gap:30px;
     border-bottom:2px solid #eee;
     padding-bottom:20px;
 }
 
-header h1{
-    margin:0;
-    color:#333;
+.profile{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
 }
 
-header p{
+.name h1{
+    margin:0;
+    font-size:32px;
+}
+
+.name p{
     color:#666;
+    margin:5px 0 0 0;
 }
 
 section{
-    margin-top:25px;
+    margin-top:30px;
 }
 
 section h2{
     border-left:5px solid #4CAF50;
     padding-left:10px;
-    color:#333;
 }
 
 .info-grid{
     display:grid;
-    grid-template-columns:150px 1fr;
+    grid-template-columns:120px 1fr;
+    gap:10px;
+    margin-top:10px;
+}
+
+.skills{
+    display:grid;
+    grid-template-columns:1fr 1fr;
     gap:10px;
 }
 
 .skill{
     background:#e9f5ec;
-    padding:8px;
-    margin:5px 0;
+    padding:10px;
     border-radius:5px;
 }
 
@@ -74,9 +90,10 @@ button:hover{
 
 footer{
     text-align:center;
-    margin-top:30px;
+    margin-top:40px;
     color:#888;
 }
+
 </style>
 </head>
 
@@ -85,13 +102,21 @@ footer{
 <div class="container">
 
 <header>
-<h1 id="name">你的名字</h1>
+
+<img src="images/photo.jpg" class="profile">
+
+<div class="name">
+<h1>張辰熙</h1>
 <p>亞洲大學 AI系學生</p>
+</div>
+
 </header>
 
 <section>
 <h2>基本資料</h2>
+
 <div class="info-grid">
+
 <div>學校</div>
 <div>亞洲大學</div>
 
@@ -102,17 +127,24 @@ footer{
 <div>人工智慧學系</div>
 
 <div>Email</div>
-<div id="email">example@email.com</div>
+<div>cz695799@gmail.com</div>
+
 </div>
 </section>
 
 <section>
 <h2>技能</h2>
 
+<div class="skills">
+
 <div class="skill">Python</div>
-<div class="skill">HTML / CSS / JavaScript</div>
-<div class="skill">AI / Machine Learning 基礎</div>
+<div class="skill">HTML / CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">Machine Learning</div>
 <div class="skill">資料分析</div>
+<div class="skill">AI 基礎</div>
+
+</div>
 
 </section>
 
@@ -120,8 +152,8 @@ footer{
 <h2>學習經歷</h2>
 
 <p>
-目前就讀於亞洲大學人工智慧學系，對 AI 技術、程式設計與資料分析有興趣，
-持續學習 Python、網頁開發以及機器學習相關技術。
+目前就讀於亞洲大學人工智慧學系，對 AI 技術、程式設計與資料分析有高度興趣，
+持續學習 Python、機器學習以及網頁開發技術。
 </p>
 
 </section>
@@ -149,9 +181,9 @@ footer{
 
 function changeTheme(){
 
-let body = document.body
+let body=document.body
 
-if(body.style.background === "rgb(34, 34, 34)"){
+if(body.style.background==="rgb(34, 34, 34)"){
 
 body.style.background="#f4f6f9"
 document.querySelector(".container").style.background="white"
