@@ -9,113 +9,132 @@
     body {
         margin: 0;
         font-family: "Microsoft JhengHei", sans-serif;
-        background: #e7eaf0;
+        background: #f2f2f2;
     }
 
-    .resume {
-        width: 900px;
-        margin: 40px auto;
-        display: flex;
-        background: white;
-        box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-
-    /* 左側欄 */
-    .left {
-        width: 32%;
-        background: #1f2738;
+    /* 上方深色橫幅 */
+    .header {
+        background: #3b4455;
         color: white;
-        padding: 40px 30px;
+        padding: 40px 60px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
     }
 
     .photo {
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
         overflow: hidden;
-        margin: auto;
+        background: #fff;
     }
-
     .photo img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    .info {
-        margin-top: 20px;
-        font-size: 14px;
-        line-height: 1.9;
+    .header-info h1 {
+        margin: 0;
+        font-size: 32px;
+    }
+    .header-info p {
+        margin: 8px 0 0;
+        font-size: 15px;
+        letter-spacing: 2px;
     }
 
-    .left h3 {
-        margin-top: 30px;
-        border-bottom: 1px solid #ffffff55;
-        padding-bottom: 6px;
-        font-size: 16px;
+    /* 主要內容區 */
+    .container {
+        padding: 40px 60px;
+        display: flex;
+        gap: 50px;
     }
 
-    .skills, .self {
-        margin-top: 20px;
-        font-size: 14px;
+    /* 左側欄 */
+    .left {
+        width: 35%;
     }
 
     /* 右側欄 */
     .right {
-        width: 68%;
-        padding: 50px;
+        width: 65%;
     }
 
-    .name-title h1 {
-        margin: 0;
-        font-size: 36px;
-        letter-spacing: 2px;
+    .section-title {
+        background: #e0e0e0;
+        padding: 8px 12px;
+        font-weight: bold;
+        margin-top: 25px;
+        border-left: 5px solid #3b4455;
     }
 
-    .name-title p {
-        margin: 5px 0 0 0;
-        color: #666;
-        letter-spacing: 3px;
+    .text-block p {
+        margin: 6px 0;
+        line-height: 1.7;
     }
+
 </style>
 </head>
 <body>
 
-<div class="resume">
+<!-- 頂部區塊 -->
+<div class="header">
+    <div class="photo">
+        <img src="images/photo.jpg">
+    </div>
+
+    <div class="header-info">
+        <h1>張辰熙</h1>
+        <p>亞洲大學 AI系 學生</p>
+    </div>
+</div>
+
+<!-- 主體內容 -->
+<div class="container">
 
     <!-- 左欄 -->
     <div class="left">
 
-        <div class="photo">
-            <images>
-            <photo class="photo.jpg">照片</photo>
-            </images>
-        </div>
-
-        <div class="info">
+        <div class="section-title">基本資料</div>
+        <div class="text-block">
             <p>學校：亞洲大學</p>
             <p>學號：114022092</p>
             <p>科系：人工智慧學系</p>
             <p>Email：cz695799@gmail.com</p>
         </div>
 
-        <h3>技能</h3>
-        <div class="skills">
-            <p>Python、HTML / CSS、JavaScript、Machine Learning、資料分析、AI 基礎</p>
+        <div class="section-title">技能</div>
+        <div class="text-block">
+            <p>Python、HTML / CSS、JavaScript</p>
+            <p>Machine Learning、資料分析、AI基礎</p>
         </div>
 
-        <h3>自我評價</h3>
-        <div class="self">
+        <div class="section-title">自我評價</div>
+        <div class="text-block">
             <p>具備細膩觀察力、創意能力，積極學習與提升自我。</p>
         </div>
+
     </div>
 
-    <!-- 右欄：保持簡潔 -->
+    <!-- 右欄 -->
     <div class="right">
-        <div class="name-title">
-            <h1>張辰熙</h1>
-            <p>亞洲大學 AI系學生</p>
+
+        <div class="section-title">學習經歷</div>
+        <div class="text-block">
+            <p>目前就讀於亞洲大學人工智慧學系。</p>
+            <p>對 AI 技術、程式設計與資料分析有高度興趣。</p>
+            <p>持續學習 Python、機器學習與網頁開發。</p>
         </div>
+
+        <div class="section-title">作品 / 專案</div>
+        <div class="text-block">
+            <p>AI 小專案（機器學習練習）</p>
+            <p>個人網站</p>
+            <p>資料分析練習</p>
+        </div>
+
     </div>
 
 </div>
