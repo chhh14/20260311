@@ -6,200 +6,117 @@
 <title>個人履歷</title>
 
 <style>
+    body {
+        margin: 0;
+        font-family: "Microsoft JhengHei", sans-serif;
+        background: #e7eaf0;
+    }
 
-body{
-    font-family:"Microsoft JhengHei",sans-serif;
-    margin:0;
-    background:#f4f6f9;
-}
+    .resume {
+        width: 900px;
+        margin: 40px auto;
+        display: flex;
+        background: white;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
 
-.container{
-    max-width:900px;
-    margin:auto;
-    background:white;
-    padding:40px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
+    /* 左側欄 */
+    .left {
+        width: 32%;
+        background: #1f2738;
+        color: white;
+        padding: 40px 30px;
+    }
 
-header{
-    display:flex;
-    align-items:center;
-    gap:30px;
-    border-bottom:2px solid #eee;
-    padding-bottom:20px;
-}
+    .photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: auto;
+    }
 
-.profile{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit:cover;
-}
+    .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-.name h1{
-    margin:0;
-    font-size:32px;
-}
+    .info {
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 1.9;
+    }
 
-.name p{
-    color:#666;
-    margin:5px 0 0 0;
-}
+    .left h3 {
+        margin-top: 30px;
+        border-bottom: 1px solid #ffffff55;
+        padding-bottom: 6px;
+        font-size: 16px;
+    }
 
-section{
-    margin-top:30px;
-}
+    .skills, .self {
+        margin-top: 20px;
+        font-size: 14px;
+    }
 
-section h2{
-    border-left:5px solid #4CAF50;
-    padding-left:10px;
-}
+    /* 右側欄 */
+    .right {
+        width: 68%;
+        padding: 50px;
+    }
 
-.info-grid{
-    display:grid;
-    grid-template-columns:120px 1fr;
-    gap:10px;
-    margin-top:10px;
-}
+    .name-title h1 {
+        margin: 0;
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
 
-.skills{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-}
-
-.skill{
-    background:#e9f5ec;
-    padding:10px;
-    border-radius:5px;
-}
-
-button{
-    margin-top:20px;
-    padding:10px 20px;
-    border:none;
-    background:#4CAF50;
-    color:white;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#43a047;
-}
-
-footer{
-    text-align:center;
-    margin-top:40px;
-    color:#888;
-}
-
+    .name-title p {
+        margin: 5px 0 0 0;
+        color: #666;
+        letter-spacing: 3px;
+    }
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<div class="resume">
 
-<header>
+    <!-- 左欄 -->
+    <div class="left">
 
-<img src="images/photo.jpg" class="profile">
+        <div class="photo">
+            images/photo.jpg
+        </div>
 
-<div class="name">
-<h1>張辰熙</h1>
-<p>亞洲大學 AI系學生</p>
-</div>
+        <div class="info">
+            <p>學校：亞洲大學</p>
+            <p>學號：114022092</p>
+            <p>科系：人工智慧學系</p>
+            <p>Email：cz695799@gmail.com</p>
+        </div>
 
-</header>
+        <h3>技能</h3>
+        <div class="skills">
+            <p>Python、HTML / CSS、JavaScript、Machine Learning、資料分析、AI 基礎</p>
+        </div>
 
-<section>
-<h2>基本資料</h2>
+        <h3>自我評價</h3>
+        <div class="self">
+            <p>具備細膩觀察力、創意能力，積極學習與提升自我。</p>
+        </div>
+    </div>
 
-<div class="info-grid">
-
-<div>學校</div>
-<div>亞洲大學</div>
-
-<div>學號</div>
-<div>114022092</div>
-
-<div>科系</div>
-<div>人工智慧學系</div>
-
-<div>Email</div>
-<div>cz695799@gmail.com</div>
-
-</div>
-</section>
-
-<section>
-<h2>技能</h2>
-
-<div class="skills">
-
-<div class="skill">Python</div>
-<div class="skill">HTML / CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">Machine Learning</div>
-<div class="skill">資料分析</div>
-<div class="skill">AI 基礎</div>
+    <!-- 右欄：保持簡潔 -->
+    <div class="right">
+        <div class="name-title">
+            <h1>張辰熙</h1>
+            <p>亞洲大學 AI系學生</p>
+        </div>
+    </div>
 
 </div>
-
-</section>
-
-<section>
-<h2>學習經歷</h2>
-
-<p>
-目前就讀於亞洲大學人工智慧學系，對 AI 技術、程式設計與資料分析有高度興趣，
-持續學習 Python、機器學習以及網頁開發技術。
-</p>
-
-</section>
-
-<section>
-<h2>作品 / 專案</h2>
-
-<ul>
-<li>AI 小專案（機器學習練習）</li>
-<li>個人網站</li>
-<li>資料分析練習</li>
-</ul>
-
-</section>
-
-<button onclick="changeTheme()">切換顏色主題</button>
-
-<footer>
-<p>© 2026 個人履歷</p>
-</footer>
-
-</div>
-
-<script>
-
-function changeTheme(){
-
-let body=document.body
-
-if(body.style.background==="rgb(34, 34, 34)"){
-
-body.style.background="#f4f6f9"
-document.querySelector(".container").style.background="white"
-document.body.style.color="black"
-
-}else{
-
-body.style.background="#222"
-document.querySelector(".container").style.background="#333"
-document.body.style.color="white"
-
-}
-
-}
-
-</script>
 
 </body>
 </html>
