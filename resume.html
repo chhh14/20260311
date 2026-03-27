@@ -65,3 +65,66 @@
     <div class="photo">
       <img src="images/photo.jpg">
     </div>
+    <div>
+      <h1>張辰熙</h1>
+      <p>亞洲大學 AI 系學生</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="section-title">基本資料</div>
+      <div class="text-block">
+        <p>學校：亞洲大學</p>
+        <p>學號：114022092</p>
+        <p>科系：人工智慧學系</p>
+        <p>Email：cz695799@gmail.com</p>
+      </div>
+
+      <div class="section-title">技能</div>
+      <div class="text-block">
+        <p>Python、HTML / CSS、JavaScript</p>
+        <p>Machine Learning、資料分析</p>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="section-title">學習經歷</div>
+      <div class="text-block">
+        <p>目前就讀於亞洲大學人工智慧學系。</p>
+        <p>對 AI 技術、程式設計與資料分析具有高度興趣。</p>
+      </div>
+
+      <div class="section-title">作品 / 專案</div>
+      <div class="text-block">
+        <p>AI 小專案（機器學習應用）</p>
+        <p>個人網站</p>
+        <p>資料分析練習</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔊 背景音樂：可自動播放 & 可解除靜音 -->
+  <audio id="bgm" autoplay loop playsinline muted>
+    music.mp3
+  </audio>
+
+  <script>
+    const audio = document.getElementById("bgm");
+
+    // 自動播放（Chrome 需要先靜音）
+    audio.play().then(() => {
+      setTimeout(() => {
+        audio.muted = false;
+      }, 300);
+    }).catch(() => {
+      // 若被瀏覽器阻擋 → 等第一下點擊後播放
+      window.addEventListener("click", () => {
+        audio.muted = false;
+        audio.play();
+      }, { once: true });
+    });
+  </script>
+
+</body>
+</html>
