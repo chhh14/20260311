@@ -139,27 +139,18 @@
 
 </div>
 
-<!-- 音樂自動播放 -->
-<audio id="bgm" autoplay loop playsinline muted>
+<!-- 音樂 -->
+<audio id="bgm" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<script>
-  const audio = document.getElementById("bgm");
+<button class="music-btn" onclick="playMusic()">播放音樂</button>
 
-  // 嘗試自動播放（Chrome 要求先靜音）
-  audio.play().then(() => {
-    // 自動播放成功 → 延遲解除靜音
-    setTimeout(() => {
-      audio.muted = false;
-    }, 300);
-  }).catch(() => {
-    // 若仍被阻擋 → 等使用者第一次互動再播放
-    window.addEventListener("click", () => {
-      audio.muted = false;
-      audio.play();
-    }, { once: true });
-  });
+<script>
+function playMusic() {
+  const audio = document.getElementById("bgm");
+  audio.play();
+}
 </script>
 
 </body>
