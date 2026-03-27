@@ -12,7 +12,6 @@
         background: #f2f2f2;
     }
 
-    /* 上方深色橫幅 */
     .header {
         background: #3b4455;
         color: white;
@@ -45,19 +44,16 @@
         letter-spacing: 2px;
     }
 
-    /* 主要內容區 */
     .container {
         padding: 40px 60px;
         display: flex;
         gap: 50px;
     }
 
-    /* 左側欄 */
     .left {
         width: 35%;
     }
 
-    /* 右側欄 */
     .right {
         width: 65%;
     }
@@ -75,11 +71,22 @@
         line-height: 1.7;
     }
 
+    /* 播放按鈕 */
+    .music-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 20px;
+        background: #3b4455;
+        color: white;
+        cursor: pointer;
+    }
 </style>
 </head>
 <body>
 
-<!-- 頂部區塊 -->
 <div class="header">
     <div class="photo">
         <img src="images/photo.jpg">
@@ -91,12 +98,9 @@
     </div>
 </div>
 
-<!-- 主體內容 -->
 <div class="container">
 
-    <!-- 左欄 -->
     <div class="left">
-
         <div class="section-title">基本資料</div>
         <div class="text-block">
             <p>學校：亞洲大學</p>
@@ -115,12 +119,9 @@
         <div class="text-block">
             <p>具備細膩觀察力、創意能力，積極學習與提升自我。</p>
         </div>
-
     </div>
 
-    <!-- 右欄 -->
     <div class="right">
-
         <div class="section-title">學習經歷</div>
         <div class="text-block">
             <p>目前就讀於亞洲大學人工智慧學系。</p>
@@ -134,10 +135,23 @@
             <p>個人網站</p>
             <p>資料分析練習</p>
         </div>
-
     </div>
 
 </div>
+
+<!-- 音樂 -->
+<audio id="bgm" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="playMusic()">播放音樂</button>
+
+<script>
+function playMusic() {
+  const audio = document.getElementById("bgm");
+  audio.play();
+}
+</script>
 
 </body>
 </html>
