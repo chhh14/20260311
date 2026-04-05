@@ -56,6 +56,24 @@
       margin: 6px 0;
       line-height: 1.7;
     }
+
+    /* 播放按鈕樣式 */
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #3b4455;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .music-btn:hover {
+      background: #2a3240;
+    }
   </style>
 </head>
 
@@ -104,26 +122,27 @@
     </div>
   </div>
 
-  <!-- 🔊 背景音樂 -->
-  <audio id="bgm" autoplay loop playsinline muted>
+  <!-- 🎵 音樂 -->
+  <audio id="bgm" loop>
     <source src="music.mp3" type="audio/mpeg">
   </audio>
 
+  <!-- 🎮 控制按鈕 -->
+  <button class="music-btn" onclick="toggleMusic()">▶ 播放音樂</button>
+
   <script>
     const audio = document.getElementById("bgm");
+    const btn = document.querySelector(".music-btn");
 
-    // 嘗試自動播放
-    audio.play().then(() => {
-      setTimeout(() => {
-        audio.muted = false; // 解除靜音
-      }, 300);
-    }).catch(() => {
-      // 若被擋 → 點擊後播放
-      window.addEventListener("click", () => {
-        audio.muted = false;
+    function toggleMusic() {
+      if (audio.paused) {
         audio.play();
-      }, { once: true });
-    });
+        btn.innerText = "⏸ 暫停音樂";
+      } else {
+        audio.pause();
+        btn.innerText = "▶ 播放音樂";
+      }
+    }
   </script>
 
 </body>
