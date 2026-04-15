@@ -203,6 +203,26 @@
       }
     }
   </script>
+<audio id="bgm" loop>
+    <source src="audio/music.mp3" type="audio/mpeg">
+  </audio>
 
+  <button class="music-btn" onclick="toggleMusic()">▶ 播放音樂</button>
+
+  <script>
+    const audio = document.getElementById("bgm");
+    const btn = document.querySelector(".music-btn");
+
+    function toggleMusic() {
+      if (audio.paused) {
+        audio.play();
+        btn.innerText = "⏸ 暫停音樂";
+      } else {
+        audio.pause();
+        btn.innerText = "▶ 播放音樂";
+      }
+    }
+  </script>
+  
 </body>
 </html>
