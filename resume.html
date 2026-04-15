@@ -15,71 +15,100 @@
     .header {
       background: linear-gradient(135deg, #3b4455, #5a6a85);
       color: white;
-      padding: 40px 60px;
+      padding: 40px 20px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 30px;
+      gap: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
     .photo {
-      width: 140px;
-      height: 140px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       overflow: hidden;
-      background: white;
       border: 4px solid rgba(255,255,255,0.6);
     }
 
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .container {
-      padding: 40px 60px;
+      padding: 20px;
       display: flex;
-      gap: 40px;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    .left, .right {
+    .card {
       background: white;
-      padding: 25px;
+      padding: 20px;
       border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
     }
-
-    .left { width: 35%; }
-    .right { width: 65%; }
 
     .section-title {
       font-weight: bold;
-      margin-top: 20px;
       margin-bottom: 10px;
-      font-size: 16px;
+      font-size: 15px;
       color: #3b4455;
-      border-bottom: 2px solid #3b4455;
-      padding-bottom: 5px;
+      border-left: 4px solid #3b4455;
+      padding-left: 8px;
     }
 
     .text-block p {
-      margin: 6px 0;
-      line-height: 1.7;
+      margin: 5px 0;
+      line-height: 1.6;
+      font-size: 14px;
       color: #444;
     }
 
-    .music-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #3b4455;
-      color: white;
+    button {
+      padding: 8px 14px;
       border: none;
-      padding: 12px 18px;
-      border-radius: 12px;
+      border-radius: 8px;
+      background: #5a6a85;
+      color: white;
       cursor: pointer;
-      font-size: 14px;
+      margin-top: 10px;
     }
 
-    @media (max-width: 768px) {
-      .header { flex-direction: column; text-align: center; padding: 30px 20px; }
-      .container { flex-direction: column; padding: 20px; }
-      .left, .right { width: 100%; }
+    button:hover {
+      background: #3b4455;
+    }
+
+    /* 🍰 作品圖片 */
+    .gallery {
+      display: none;
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      height: 120px;
+      object-fit: cover;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        flex-direction: row;
+      }
+      .left { width: 35%; }
+      .right { width: 65%; }
     }
   </style>
 </head>
@@ -90,70 +119,52 @@
     <div class="photo">
       <img src="images/photo.jpg">
     </div>
-    <div>
-      <h1>張辰熙</h1>
-      <p>亞洲大學 AI 系學生</p>
-    </div>
+    <h1>張辰熙</h1>
+    <p>亞洲大學 AI 系學生</p>
   </div>
 
   <div class="container">
 
-    <div class="left">
-
+    <div class="card left">
       <div class="section-title">基本資料</div>
       <div class="text-block">
-        <p>學校：亞洲大學</p>
-        <p>學號：114022092</p>
-        <p>科系：人工智慧學系</p>
+        <p>亞洲大學｜人工智慧學系</p>
         <p>Email：cz695799@gmail.com</p>
       </div>
 
       <div class="section-title">技能</div>
       <div class="text-block">
-        <p>Word / Excel / PowerPoint</p>
-        <p>基本資料處理</p>
-        <p>HTML / CSS 基礎</p>
+        <p>Word / Excel / PPT</p>
+        <p>HTML / CSS</p>
+        <p>資料處理</p>
         <p>會計人工記帳</p>
-      </div>
-
-      <div class="section-title">個人特質</div>
-      <div class="text-block">
-        <p>負責任、細心</p>
-        <p>具備耐心與學習能力</p>
-        <p>能獨立完成任務</p>
       </div>
 
       <div class="section-title">興趣</div>
       <div class="text-block">
-        <p>自學甜點製作（培養耐心與細節掌控）</p>
+        <p>自學甜點製作（細節與耐心）</p>
 
-        <!-- 🍰 按鈕放這裡 -->
-        <button onclick="toggleGallery()" style="margin-top:10px; padding:8px 14px; border:none; border-radius:8px; background:#5a6a85; color:white; cursor:pointer;">
-          查看作品
-        </button>
+        <button onclick="toggleGallery()">🍰 查看作品</button>
 
-        <div id="gallery" style="display:none; margin-top:10px;">
-          <img src="images/dessert1.jpeg" style="width:100%; border-radius:10px; margin-top:10px;">
-          <img src="images/dessert2.jpeg" style="width:100%; border-radius:10px; margin-top:10px;">
+        <div id="gallery" class="gallery">
+          <img src="dessert1.jpg">
+          <img src="dessert2.jpg">
         </div>
-
       </div>
-
     </div>
 
-    <div class="right">
-
+    <div class="card right">
       <div class="section-title">自我介紹</div>
       <div class="text-block">
-        <p>我是亞洲大學人工智慧學系學生，對AI與資料分析充滿興趣，平時也會自學相關技術與甜點製作。</p>
+        <p>對 AI 與資料分析有興趣，具備自學能力與耐心，並透過甜點製作培養細節掌控。</p>
       </div>
 
       <div class="section-title">學習經歷</div>
       <div class="text-block">
-        <p>學習 Python、機器學習與資料分析。</p>
+        <p>學習 Python、機器學習與資料分析</p>
       </div>
 
-      <div class="section-title">作品 / 專案</div>
+      <div class="section-title">專案</div>
       <div class="text-block">
         <p>AI 小專案</p>
         <p>個人網站</p>
@@ -161,9 +172,8 @@
 
       <div class="section-title">未來目標</div>
       <div class="text-block">
-        <p>希望未來從事 AI 或資料分析相關工作。</p>
+        <p>朝 AI / 資料分析領域發展</p>
       </div>
-
     </div>
 
   </div>
@@ -171,7 +181,11 @@
   <script>
     function toggleGallery() {
       const g = document.getElementById("gallery");
-      g.style.display = g.style.display === "none" ? "block" : "none";
+      if (g.style.display === "grid") {
+        g.style.display = "none";
+      } else {
+        g.style.display = "grid";
+      }
     }
   </script>
 
