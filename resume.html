@@ -9,16 +9,17 @@
     body {
       margin: 0;
       font-family: "Microsoft JhengHei", sans-serif;
-      background: #f2f2f2;
+      background: linear-gradient(135deg, #eef2f7, #dfe6f1);
     }
 
     .header {
-      background: #3b4455;
+      background: linear-gradient(135deg, #3b4455, #5a6a85);
       color: white;
       padding: 40px 60px;
       display: flex;
       align-items: center;
       gap: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
     .photo {
@@ -27,6 +28,7 @@
       border-radius: 50%;
       overflow: hidden;
       background: white;
+      border: 4px solid rgba(255,255,255,0.6);
     }
 
     .photo img {
@@ -38,26 +40,35 @@
     .container {
       padding: 40px 60px;
       display: flex;
-      gap: 50px;
+      gap: 40px;
+    }
+
+    .left, .right {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
 
     .left { width: 35%; }
     .right { width: 65%; }
 
     .section-title {
-      background: #e0e0e0;
-      padding: 8px 12px;
       font-weight: bold;
-      margin-top: 25px;
-      border-left: 5px solid #3b4455;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #3b4455;
+      border-bottom: 2px solid #3b4455;
+      padding-bottom: 5px;
     }
 
     .text-block p {
       margin: 6px 0;
       line-height: 1.7;
+      color: #444;
     }
 
-    /* 播放按鈕樣式 */
     .music-btn {
       position: fixed;
       bottom: 20px;
@@ -66,9 +77,10 @@
       color: white;
       border: none;
       padding: 12px 18px;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
       font-size: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     .music-btn:hover {
@@ -90,7 +102,10 @@
   </div>
 
   <div class="container">
+
+    <!-- 左邊 -->
     <div class="left">
+
       <div class="section-title">基本資料</div>
       <div class="text-block">
         <p>學校：亞洲大學</p>
@@ -101,33 +116,60 @@
 
       <div class="section-title">技能</div>
       <div class="text-block">
-        <p>Python、HTML / CSS、JavaScript</p>
-        <p>Machine Learning、資料分析</p>
+        <p>Word / Excel / PowerPoint</p>
+        <p>基本資料處理</p>
+        <p>HTML / CSS 基礎</p>
+        <p>會計人工記帳</p>
       </div>
+
+      <div class="section-title">個人特質</div>
+      <div class="text-block">
+        <p>負責任、細心</p>
+        <p>具備耐心與學習能力</p>
+        <p>能獨立完成任務</p>
+      </div>
+
+      <div class="section-title">興趣</div>
+      <div class="text-block">
+        <p>自學甜點製作（培養耐心與細節掌控）</p>
+      </div>
+
     </div>
 
+    <!-- 右邊 -->
     <div class="right">
+
+      <div class="section-title">自我介紹</div>
+      <div class="text-block">
+        <p>我是亞洲大學人工智慧學系學生，對AI與資料分析充滿興趣，平時也會自學相關技術與甜點製作，具備良好的學習能力與耐心，期望未來能將所學應用於實務領域。</p>
+      </div>
+
       <div class="section-title">學習經歷</div>
       <div class="text-block">
         <p>目前就讀於亞洲大學人工智慧學系。</p>
-        <p>對 AI 技術、程式設計與資料分析具有高度興趣。</p>
+        <p>學習內容包含 Python 程式設計、機器學習基礎與資料分析。</p>
       </div>
 
       <div class="section-title">作品 / 專案</div>
       <div class="text-block">
         <p>AI 小專案（機器學習應用）</p>
-        <p>個人網站</p>
+        <p>個人網站製作</p>
         <p>資料分析練習</p>
       </div>
+
+      <div class="section-title">未來目標</div>
+      <div class="text-block">
+        <p>未來希望能在人工智慧或資料分析領域發展，持續提升技術能力，並將所學應用於實際問題解決。</p>
+      </div>
+
     </div>
+
   </div>
 
-  <!-- 🎵 音樂 -->
   <audio id="bgm" loop>
     <source src="audio/music.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- 🎮 控制按鈕 -->
   <button class="music-btn" onclick="toggleMusic()">▶ 播放音樂</button>
 
   <script>
@@ -147,3 +189,4 @@
 
 </body>
 </html>
+
