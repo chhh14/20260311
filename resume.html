@@ -1,228 +1,221 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>個人履歷</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人履歷</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Microsoft JhengHei", sans-serif;
-      background: linear-gradient(135deg, #eef2f7, #dfe6f1);
-    }
+<style>
+body{
+  margin:0;
+  font-family:"Microsoft JhengHei";
+  background:#f2f2f2;
+}
 
-    .header {
-      background: linear-gradient(135deg, #3b4455, #5a6a85);
-      color: white;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
+/* 上方區塊 */
+.header{
+  background:#dcdcdc;
+  padding:40px 20px;
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
 
-    .photo {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 4px solid rgba(255,255,255,0.6);
-    }
+.photo{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  overflow:hidden;
+  background:#eee;
+}
 
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-    .container {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+.header-text h1{
+  margin:0;
+  font-size:32px;
+}
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    }
+.header-text p{
+  margin:5px 0 0;
+  color:#555;
+}
 
-    .section-title {
-      font-weight: bold;
-      margin-bottom: 10px;
-      font-size: 15px;
-      color: #3b4455;
-      border-left: 4px solid #3b4455;
-      padding-left: 8px;
-    }
+/* 主體 */
+.container{
+  display:flex;
+  flex-direction:column; /* 改成直式 */
+}
 
-    .text-block p {
-      margin: 5px 0;
-      line-height: 1.6;
-      font-size: 14px;
-      color: #444;
-    }
+.left{
+  width:100%;
+  background:#ffffff;
+  padding:20px;
+  border-bottom:1px solid #ccc;
+}
 
-    button {
-      padding: 8px 14px;
-      border: none;
-      border-radius: 8px;
-      background: #5a6a85;
-      color: white;
-      cursor: pointer;
-      margin-top: 10px;
-    }
+.right{
+  width:100%;
+  padding:20px;
+}
 
-    button:hover {
-      background: #3b4455;
-    }
+.section{
+  margin-bottom:25px;
+}
 
-    /* 🍰 作品圖片 */
-    .gallery {
-      display: none;
-      margin-top: 10px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
+.title{
+  font-weight:bold;
+  border-bottom:2px solid #333;
+  padding-bottom:5px;
+  margin-bottom:10px;
+}
 
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      height: 120px;
-      object-fit: cover;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
-    }
+p{
+  margin:5px 0;
+  font-size:14px;
+}
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
+/* 作品 */
+button{
+  margin-top:10px;
+  padding:6px 12px;
+  border:none;
+  background:#333;
+  color:white;
+  cursor:pointer;
+}
 
-    @media (min-width: 768px) {
-      .container {
-        flex-direction: row;
-      }
-      .left { width: 35%; }
-      .right { width: 65%; }
-    }
-  </style>
+.gallery{
+  display:none;
+  margin-top:10px;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.gallery img{
+  width:100%;
+  height:100px;
+  object-fit:cover;
+}
+
+/* 音樂按鈕 */
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  padding:10px 15px;
+  background:#333;
+  color:#fff;
+  border:none;
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="header">
-    <div class="photo">
-      <img src="images/photo.jpg?v=1">
-    </div>
+<div class="header">
+  <div class="photo">
+    <img src="images/photo.jpg?v=1">
+  </div>
+  <div class="header-text">
     <h1>張辰熙</h1>
     <p>亞洲大學 AI 系學生</p>
   </div>
+</div>
 
-  <div class="container">
+<div class="container">
 
-    <div class="card left">
-      <div class="section-title">基本資料</div>
-      <div class="text-block">
-        <p>亞洲大學｜人工智慧學系</p>
-        <p>學號：114022092</p>
-        <p>Email：cz695799@gmail.com</p>
-      </div>
+<div class="left">
 
-      <div class="section-title">技能</div>
-      <div class="text-block">
-        <p>Word / Excel / PPT</p>
-        <p>HTML / CSS</p>
-        <p>資料處理</p>
-        <p>會計人工記帳</p>
-      </div>
+<div class="section">
+<div class="title">基本資料</div>
+<p>亞洲大學｜人工智慧學系</p>
+<p>學號：114022092</p>
+<p>Email：cz695799@gmail.com</p>
+</div>
 
-      <div class="section-title">興趣</div>
-      <div class="text-block">
-        <p>自學甜點製作（細節與耐心）</p>
+<div class="section">
+<div class="title">技能</div>
+<p>Word / Excel / PPT</p>
+<p>HTML / CSS</p>
+<p>資料處理</p>
+<p>會計人工記帳</p>
+</div>
 
-        <button onclick="toggleGallery()">🍰 查看作品</button>
+<div class="section">
+<div class="title">興趣</div>
+<p>自學甜點製作（細節與耐心）</p>
 
-        <div id="gallery" class="gallery">
-           <div class="gallery-item">
-            <img src="images/dessert1.jpeg">
-            <div class="overlay">可頌</div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/dessert2.jpg">
-            <div class="overlay">蛋糕</div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/dessert3.jpg">
-            <div class="overlay">泡芙</div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/dessert4.jpg">
-            <div class="overlay">餅乾</div>
-          </div>
-        </div>
-      </div>
-    </div>
+<button onclick="toggleGallery()">查看作品</button>
 
-    <div class="card right">
-      <div class="section-title">自我介紹</div>
-      <div class="text-block">
-        <p>對 AI 與資料分析有興趣，具備自學能力與耐心，並透過甜點製作培養細節掌控。</p>
-      </div>
+<div id="gallery" class="gallery">
+<img src="images/dessert1.jpeg">
+<img src="images/dessert2.jpg">
+<img src="images/dessert3.jpg">
+<img src="images/dessert4.jpg">
+</div>
 
-      <div class="section-title">學習經歷</div>
-      <div class="text-block">
-        <p>學習 Python、機器學習與資料分析</p>
-      </div>
+</div>
 
-      <div class="section-title">專案</div>
-      <div class="text-block">
-        <p>AI 小專案</p>
-        <p>個人網站</p>
-      </div>
+</div>
 
-      <div class="section-title">未來目標</div>
-      <div class="text-block">
-        <p>朝 AI / 資料分析領域發展</p>
-      </div>
-    </div>
+<div class="right">
 
-  </div>
+<div class="section">
+<div class="title">自我介紹</div>
+<p>對 AI 與資料分析有興趣，具備自學能力與耐心，並透過甜點製作培養細節掌控。</p>
+</div>
 
-  <script>
-    function toggleGallery() {
-      const g = document.getElementById("gallery");
-      if (g.style.display === "grid") {
-        g.style.display = "none";
-      } else {
-        g.style.display = "grid";
-      }
-    }
-  </script>
+<div class="section">
+<div class="title">學習經歷</div>
+<p>學習 Python、機器學習與資料分析</p>
+</div>
+
+<div class="section">
+<div class="title">專案</div>
+<p>AI 小專案</p>
+<p>個人網站</p>
+</div>
+
+<div class="section">
+<div class="title">未來目標</div>
+<p>朝 AI / 資料分析領域發展</p>
+</div>
+
+</div>
+
+</div>
+
 <audio id="bgm" loop>
-    <source src="audio/music.mp3" type="audio/mpeg">
-  </audio>
+<source src="audio/music.mp3" type="audio/mpeg">
+</audio>
 
-  <button class="music-btn" onclick="toggleMusic()">▶ 播放音樂</button>
+<button class="music-btn" onclick="toggleMusic()">▶ 播放音樂</button>
 
-  <script>
-    const audio = document.getElementById("bgm");
-    const btn = document.querySelector(".music-btn");
+<script>
+function toggleGallery(){
+  const g=document.getElementById("gallery");
+  g.style.display = g.style.display === "grid" ? "none" : "grid";
+}
 
-    function toggleMusic() {
-      if (audio.paused) {
-        audio.play();
-        btn.innerText = "⏸ 暫停音樂";
-      } else {
-        audio.pause();
-        btn.innerText = "▶ 播放音樂";
-      }
-    }
-  </script>
-  
+const audio=document.getElementById("bgm");
+const btn=document.querySelector(".music-btn");
+
+function toggleMusic(){
+  if(audio.paused){
+    audio.play();
+    btn.innerText="⏸ 暫停音樂";
+  }else{
+    audio.pause();
+    btn.innerText="▶ 播放音樂";
+  }
+}
+</script>
+
 </body>
 </html>
