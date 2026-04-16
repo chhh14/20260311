@@ -92,8 +92,10 @@ button{
 .gallery{
   display:none;
   margin-top:10px;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr); /* 一排4張 */ /* 一排3張，變小 */
+  gap:8px;
+  max-width:360px; /* 稍微放寬容納4張 */ /* 整體縮小 */
 }
 
 .gallery-item{
