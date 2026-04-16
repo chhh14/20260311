@@ -6,7 +6,10 @@
 <title>個人履歷</title>
 
 <style>
+*{box-sizing:border-box;}
+
 body{
+  overflow-x:hidden; /* 防止左右滑動 */
   margin:0;
   font-family:"Microsoft JhengHei";
   background:#f2f2f2;
@@ -19,6 +22,8 @@ body{
   display:flex;
   align-items:center;
   gap:30px;
+  max-width:800px;
+  margin:0 auto;
 }
 
 .photo{
@@ -48,7 +53,9 @@ body{
 /* 主體 */
 .container{
   display:flex;
-  flex-direction:column; /* 改成直式 */
+  flex-direction:column;
+  max-width:800px; /* 限制整體寬度 */
+  margin:0 auto; /* 置中 */
 }
 
 .left{
@@ -176,7 +183,7 @@ button{
 
 <div class="section">
 <div class="title">興趣</div>
-<p>自學甜點製作（細節與耐心）</p>
+<p>自學甜點製作</p>
 
 <button onclick="toggleGallery()">查看作品</button>
 
@@ -201,7 +208,7 @@ button{
 
 <div class="section">
 <div class="title">學習經歷</div>
-<p>學習 Python、機器學習與資料分析</p>
+<p>學習 Python、文書處理機器學習與資料分析</p>
 </div>
 
 <div class="section">
